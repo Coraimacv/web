@@ -1,0 +1,299 @@
+/* ================== FUENTE ================== */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ================== FONDO (COLOR + TEXTURA) ================== */
+body.merch-body {
+  background:
+    url("textura1.png") repeat,
+     rgba(179,193,232,0.95);
+  font-family: Arial, sans-serif;
+}
+
+
+/* ================== NAVBAR ================== */
+.navbar {
+  width: 100%;
+  background: #ffc72c;
+  height: 70px;
+  display: flex;
+  align-items: center;
+}
+
+/* ======== BARRA DE BÚSQUEDA DERECHA ======== */
+
+/* Ajustamos el navbar para permitir elementos a la derecha */
+.navbar {
+  display: flex;
+  justify-content: space-between; /* menú izquierda – buscador derecha */
+  align-items: center;
+  padding: 0 20px;
+}
+
+/* Contenedor del buscador */
+.search-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: auto;     /* SE VA A LA DERECHA */
+}
+
+/* Input grande con colores */
+.search-box input {
+  width: 220px;
+  padding: 12px 18px;
+  font-size: 16px;
+  border: 2px solid #ffb300;       /* amarillo */
+  border-radius: 25px;
+  background-color: #ffe9a6;       /* amarillo pastel */
+  color: #000;
+  outline: none;
+  transition: 0.3s ease;
+}
+
+.search-box input::placeholder {
+  color: #444;
+}
+
+.search-box input:focus {
+  border-color: #ff007f;          /* rosado vibrante */
+  background-color: #fff3c9;
+}
+
+/* Botón redondo con colores Bad Bunny */
+.search-box button {
+  padding: 12px 15px;
+  font-size: 18px;
+  border: none;
+  cursor: pointer;
+  border-radius: 50%;
+  background: #ff007f;            /* rosado */
+  color: white;
+  transition: 0.3s ease;
+}
+
+.search-box button:hover {
+  background: #ffb300;            /* amarillo */
+  transform: scale(1.1);
+}
+
+/* ========== CARRITO FIJO ABAJO DERECHA ========== */
+
+.cart-floating {
+  position: fixed;
+  bottom: 25px;       /* distancia desde abajo */
+  right: 25px;        /* distancia desde la derecha */
+  background: #ff007f; /* rosado Bad Bunny */
+  color: white;
+  padding: 18px 22px;
+  font-size: 40px;    /* MÁS GRANDE */
+  border-radius: 50%;
+  text-decoration: none;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.35);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s ease;
+}
+
+.cart-floating:hover {
+  transform: scale(1.15);
+  background: #ffb300; /* amarillo al pasar el mouse */
+}
+
+.cart-floating #cartCount {
+  background: white;
+  color: black;
+  padding: 3px 9px;
+  border-radius: 12px;
+  font-size: 18px;
+  margin-left: 8px;
+}
+
+
+
+.navbar ul {
+  display: flex;
+  width: 100%;
+  list-style: none;
+}
+
+.navbar li {
+  flex: 1;
+}
+
+.navbar a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 70px;
+  color: white;
+  text-decoration: none;
+  background: #ffc72c;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 20px;
+  letter-spacing: 1px;
+  transition: background .2s;
+}
+
+.navbar a:hover {
+  background: #ffdea6;
+}
+
+.navbar a.active {
+  background: #ffad1f;
+}
+
+/* ==== HERO DE MERCH (título + CD + palmeras) ==== */
+.merch-hero {
+  position: relative;          /* base para posicionar palmeras */
+  padding: 70px 0 140px;       /* espacio arriba / abajo */
+  text-align: center;
+}
+
+/* Contenedor del título y CD en el centro */
+.merch-hero-center {
+  position: relative;
+  z-index: 2;                  /* por encima de las palmeras */
+}
+
+.merch-title-img {
+  width: 200px;
+  display: block;
+  margin: 0 auto 15px;         /* centrado y con espacio abajo */
+}
+
+.merch-cd-img {
+  width: 380px;
+  max-width: 80vw;
+  display: block;
+  margin: 0 auto;
+}
+
+/* ==== PALMERAS LATERALES ==== */
+
+/* Izquierda (como en la imagen 2) */
+.palmera-left {
+  left: 100px;                 /* un poco fuera de la pantalla */
+  bottom: 0;                   /* tronco apoyado abajo */
+  position: absolute;
+  height: 850px;               /* tamaño general de las palmeras */
+  z-index: 1;                  /* por detrás del título y CD */
+  pointer-events: none;
+  bottom: -200px;   /* SUBE la palmera */
+}
+
+/* Derecha (simétrica a la izquierda) */
+.palmera-right {
+  right: 100px;                /* un poco fuera de la pantalla */
+  bottom: 0;                   /* tronco apoyado abajo */
+  position: absolute;
+  height: 850px;               /* tamaño general de las palmeras */
+  z-index: 1;                  /* por detrás del título y CD */
+  pointer-events: none;
+  bottom: -300px;   /* SUBE la palmera */
+}
+
+.merch-hero-center {
+  text-align: center;
+  width: 100%;
+}
+
+
+.merch-title-img {
+  width: 200px;
+  display: block;
+  margin: 0 auto;      /* ← lo centra */
+  margin-top: -20px;   /* ← súbelo */
+}
+
+.merch-cd-img {
+  width: 400px;
+  max-width: 80vw;
+}
+
+.merch-name {
+  color: #ff0000;
+  font-size: 25px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.merch-price {
+  color: #ff0000;
+  margin-top: 4px;
+  font-size: 20px;
+}
+
+
+/* ================== GRID DE PRODUCTOS ================== */
+.merch-grid {
+  padding: 50px 10vw 80px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px 70px;
+  justify-items: center;
+
+  background:
+    url("textura1.png") repeat,                 /* ← TU TEXTURA */
+    linear-gradient(to bottom,
+      rgba(179,193,232,0.95) 0%,
+      rgba(179,193,232,0.95) 80%,
+      rgba(179,193,232,0.95) 80%);                                         /* ← COLOR BASE */
+}
+
+
+.merch-item {
+  text-align: center;
+}
+
+.merch-item img {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+
+.merch-item h3 {
+  color: #ff0000;
+  font-size: 25px;
+  font-weight: bold;
+  line-height: 1.3;
+}
+
+/* ================== PISO + CORAZÓN (SEPARADOS) ================== */
+.merch-floor-section {
+  position: relative;
+  width: 100%;
+  background: none;       /* ← YA SIN NARANJA */
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding-top: 30px;
+  padding-bottom: 0;
+  overflow: visible;
+}
+
+
+.merch-floor-img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.merch-floor-heart {
+  position: absolute;
+  bottom: 20px; /* SUBIR / BAJAR CORAZÓN */
+  width: 250px;
+  z-index: 2;
+}

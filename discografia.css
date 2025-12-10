@@ -1,0 +1,220 @@
+/* ================== FUENTE (opcional) ================== */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+/* ================== RESET ================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ================== FONDO GENERAL DISCOGRAFÍA ================== */
+.disco-body {
+  font-family: Arial, sans-serif;
+  color: #ffffff;
+  background:
+    url("textura1.png") repeat,
+    #111111;
+}
+
+/* ================== NAVBAR IGUAL QUE OTRAS PÁGINAS ================== */
+.navbar {
+  width: 100%;
+  background: #ffb321; /* amarillo */
+  height: 70px;
+  display: flex;
+  align-items: center;
+}
+
+.navbar ul {
+  display: flex;
+  width: 100%;
+  list-style: none;
+}
+
+/* ======== BARRA DE BÚSQUEDA DERECHA ======== */
+
+/* Ajustamos el navbar para permitir elementos a la derecha */
+.navbar {
+  display: flex;
+  justify-content: space-between; /* menú izquierda – buscador derecha */
+  align-items: center;
+  padding: 0 20px;
+}
+
+/* Contenedor del buscador */
+.search-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: auto;     /* SE VA A LA DERECHA */
+}
+
+/* Input grande con colores */
+.search-box input {
+  width: 220px;
+  padding: 12px 18px;
+  font-size: 16px;
+  border: 2px solid #ffb300;       /* amarillo */
+  border-radius: 25px;
+  background-color: #ffe9a6;       /* amarillo pastel */
+  color: #000;
+  outline: none;
+  transition: 0.3s ease;
+}
+
+.search-box input::placeholder {
+  color: #444;
+}
+
+.search-box input:focus {
+  border-color: #ff007f;          /* rosado vibrante */
+  background-color: #fff3c9;
+}
+
+/* Botón redondo con colores Bad Bunny */
+.search-box button {
+  padding: 12px 15px;
+  font-size: 18px;
+  border: none;
+  cursor: pointer;
+  border-radius: 50%;
+  background: #ff007f;            /* rosado */
+  color: white;
+  transition: 0.3s ease;
+}
+
+.search-box button:hover {
+  background: #ffb300;            /* amarillo */
+  transform: scale(1.1);
+}
+
+/* ========== CARRITO FIJO ABAJO DERECHA ========== */
+
+.cart-floating {
+  position: fixed;
+  bottom: 25px;       /* distancia desde abajo */
+  right: 25px;        /* distancia desde la derecha */
+  background: #ff007f; /* rosado Bad Bunny */
+  color: white;
+  padding: 18px 22px;
+  font-size: 40px;    /* MÁS GRANDE */
+  border-radius: 50%;
+  text-decoration: none;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.35);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s ease;
+}
+
+.cart-floating:hover {
+  transform: scale(1.15);
+  background: #ffb300; /* amarillo al pasar el mouse */
+}
+
+.cart-floating #cartCount {
+  background: white;
+  color: black;
+  padding: 3px 9px;
+  border-radius: 12px;
+  font-size: 18px;
+  margin-left: 8px;
+}
+
+.navbar li {
+  flex: 1;
+}
+
+.navbar a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 70px;
+  color: #ffffff;
+  text-decoration: none;
+  background: #ffb321;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 20px;
+  letter-spacing: 1px;
+  transition: background 0.2s;
+}
+
+.navbar a:hover {
+  background: #ffc955;
+}
+
+.navbar a.active {
+  background: #d6190f; /* pestaña discografía en rojo */
+}
+
+/* ================== CABECERA OSCURA CON TÍTULO ================== */
+
+.disco-main {
+  min-height: 100vh;
+}
+
+.disco-header-strip {
+  background:
+    url("textura1.png") repeat;
+  padding: 35px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.disco-title-img {
+  width: 300px;        /* tamaño del título Discografía (imagen) */
+}
+
+/* ================== FILA DE DISCOS ================== */
+
+.disco-row {
+  display: flex;
+  gap: 0;              /* sin espacios, como en tu referencia */
+  justify-content: center;
+  align-items: stretch;
+  padding: 0;
+  overflow-x: auto;    /* por si se pasan del ancho */
+}
+
+/* Cada portada */
+.disco-card {
+  display: block;
+  position: relative;
+  flex: 0 0 auto;
+  width: 300px;        /* ancho de cada disco */
+  height: 460px;       /* alto, similar a la imagen que mandaste */
+  overflow: hidden;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+/* Imagen de la portada */
+.disco-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.25s ease, filter 0.25s ease;
+}
+
+/* Efecto al pasar el mouse */
+.disco-card:hover img {
+  transform: scale(1.05);
+  filter: brightness(1.08);
+}
+
+/* ================== RESPONSIVE ================== */
+
+@media (max-width: 900px) {
+  .disco-card {
+    width: 150px;
+    height: 280px;
+  }
+
+  .disco-title-img {
+    width: 210px;
+  }
+}

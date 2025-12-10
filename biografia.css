@@ -1,0 +1,227 @@
+
+.navbar {
+  width: 100%;
+  background: #e65822; /* naranja base */
+  height: 70px;
+  display: flex;
+  align-items: center;
+}
+
+.navbar ul {
+  display: flex;
+  list-style: none;
+  width: 100%;
+}
+
+.navbar li {
+  flex: 1;
+}
+
+.navbar a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70px;
+  text-decoration: none;
+  color: #fff;
+  font-family: 'Bebas Neue', sans-serif;
+  font-weight: bold;
+  font-size: 25px;
+  letter-spacing: 1px;
+  background: #e65822;
+  transition: background 0.2s;
+}
+
+.navbar a:hover {
+  background: #ff764a; /* naranja más claro */
+}
+
+.navbar a.active {
+  background: #ce0f0f; /* rojo para pestaña activa */
+}
+
+/* ======== BARRA DE BÚSQUEDA DERECHA ======== */
+
+/* Ajustamos el navbar para permitir elementos a la derecha */
+.navbar {
+  display: flex;
+  justify-content: space-between; /* menú izquierda – buscador derecha */
+  align-items: center;
+  padding: 0 20px;
+}
+
+/* Contenedor del buscador */
+.search-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: auto;     /* SE VA A LA DERECHA */
+}
+
+/* Input grande con colores */
+.search-box input {
+  width: 220px;
+  padding: 12px 18px;
+  font-size: 16px;
+  border: 2px solid #ffb300;       /* amarillo */
+  border-radius: 25px;
+  background-color: #ffe9a6;       /* amarillo pastel */
+  color: #000;
+  outline: none;
+  transition: 0.3s ease;
+}
+
+.search-box input::placeholder {
+  color: #444;
+}
+
+.search-box input:focus {
+  border-color: #ff007f;          /* rosado vibrante */
+  background-color: #fff3c9;
+}
+
+/* Botón redondo con colores Bad Bunny */
+.search-box button {
+  padding: 12px 15px;
+  font-size: 18px;
+  border: none;
+  cursor: pointer;
+  border-radius: 50%;
+  background: #ff007f;            /* rosado */
+  color: white;
+  transition: 0.3s ease;
+}
+
+.search-box button:hover {
+  background: #ffb300;            /* amarillo */
+  transform: scale(1.1);
+}
+
+/* ========== CARRITO FIJO ABAJO DERECHA ========== */
+
+.cart-floating {
+  position: fixed;
+  bottom: 25px;       /* distancia desde abajo */
+  right: 25px;        /* distancia desde la derecha */
+  background: #ff007f; /* rosado Bad Bunny */
+  color: white;
+  padding: 18px 22px;
+  font-size: 40px;    /* MÁS GRANDE */
+  border-radius: 50%;
+  text-decoration: none;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.35);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s ease;
+}
+
+.cart-floating:hover {
+  transform: scale(1.15);
+  background: #ffb300; /* amarillo al pasar el mouse */
+}
+
+.cart-floating #cartCount {
+  background: white;
+  color: black;
+  padding: 3px 9px;
+  border-radius: 12px;
+  font-size: 18px;
+  margin-left: 8px;
+}
+
+
+/* =========================================================
+   FONDO GENERAL BIOGRAFÍA
+========================================================= */
+
+.body-bio {
+background:
+    url("textura1.png") repeat,
+    #f2a31c;
+}
+
+
+/* =========================================================
+   CONTENEDOR GENERAL
+========================================================= */
+
+.bio-main {
+  padding: 60px 8vw;
+}
+
+.bio-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  gap: 40px;
+}
+
+
+/* =========================================================
+   COLUMNA IZQUIERDA: TÍTULO + TEXTO (IMÁGENES)
+========================================================= */
+
+.bio-left {
+  flex: 1;
+  margin-top: -100px;
+}
+
+.bio-title-wrap {
+  margin-bottom: -80px;
+}
+
+.bio-title-img {
+  width: 400px;     /* tamaño del título en imagen */
+  display: block;
+}
+
+/* BLOQUE DE TEXTO EN IMÁGENES */
+
+.bio-text-block {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.bio-text-img {
+  width: 100%;
+  max-width: 480px;
+  display: block;
+}
+
+
+/* =========================================================
+   COLUMNA DERECHA: COLLAGE COMO UNA SOLA IMAGEN
+========================================================= */
+
+.bio-right {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.bio-collage-img {
+  width: 100%;
+  max-width: 900px;
+  display: block;
+  /* IMPORTANTE: SIN BORDES, SIN SOMBRA */
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 900px) {
+  .bio-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .bio-collage-img {
+    max-width: 320px;
+  }
+}

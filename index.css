@@ -1,0 +1,558 @@
+/* ============================================
+   RESETEO
+============================================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f6aeb8;
+  overflow-x: hidden;
+}
+
+/* ============================================
+   NAVBAR
+============================================ */
+/* NAVBAR — Pestañas de un solo color */
+.navbar {
+  height: 75px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f47ba1;      /* ← COLOR BASE DE TODAS LAS PESTAÑAS */
+}
+
+/* ======== BARRA DE BÚSQUEDA DERECHA ======== */
+
+/* Ajustamos el navbar para permitir elementos a la derecha */
+.navbar {
+  display: flex;
+  justify-content: space-between; /* menú izquierda – buscador derecha */
+  align-items: center;
+  padding: 0 20px;
+}
+
+/* Contenedor del buscador */
+.search-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: auto;     /* SE VA A LA DERECHA */
+}
+
+/* ========== CARRITO FIJO ABAJO DERECHA ========== */
+
+.cart-floating {
+  position: fixed;
+  bottom: 25px;       /* distancia desde abajo */
+  right: 25px;        /* distancia desde la derecha */
+  background: #ff007f; /* rosado Bad Bunny */
+  color: white;
+  padding: 18px 22px;
+  font-size: 40px;    /* MÁS GRANDE */
+  border-radius: 50%;
+  text-decoration: none;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.35);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s ease;
+}
+
+.cart-floating:hover {
+  transform: scale(1.15);
+  background: #ffb300; /* amarillo al pasar el mouse */
+}
+
+.cart-floating #cartCount {
+  background: white;
+  color: black;
+  padding: 3px 9px;
+  border-radius: 12px;
+  font-size: 18px;
+  margin-left: 8px;
+}
+
+/* Input grande con colores */
+.search-box input {
+  width: 220px;
+  padding: 12px 18px;
+  font-size: 16px;
+  border: 2px solid #ffb300;       /* amarillo */
+  border-radius: 25px;
+  background-color: #ffe9a6;       /* amarillo pastel */
+  color: #000;
+  outline: none;
+  transition: 0.3s ease;
+}
+
+.search-box input::placeholder {
+  color: #444;
+}
+
+.search-box input:focus {
+  border-color: #ff007f;          /* rosado vibrante */
+  background-color: #fff3c9;
+}
+
+/* Botón redondo con colores Bad Bunny */
+.search-box button {
+  padding: 12px 15px;
+  font-size: 18px;
+  border: none;
+  cursor: pointer;
+  border-radius: 50%;
+  background: #ff007f;            /* rosado */
+  color: white;
+  transition: 0.3s ease;
+}
+
+.search-box button:hover {
+  background: #ffb300;            /* amarillo */
+  transform: scale(1.1);
+}
+
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  width: 100%;
+}
+
+.navbar li {
+  flex: 1;
+  background: #f47ba1;      /* ← MISMO COLOR PARA CADA PESTAÑA */
+  transition: background 0.2s;
+}
+
+/* TEXTO DE LAS PESTAÑAS */
+.navbar a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 75px;
+  text-decoration: none;
+  color: white;             /* ← color del texto */
+  font-weight: bold;
+  font-size:25px;
+  letter-spacing: 1px;
+  transition: 0.2s;
+  font-family: 'Bebas Neue', sans-serif;
+}
+
+/* EFECTO HOVER – Cambia a otro color */
+.navbar li:hover {
+  background: #ff516d;      /* ← COLOR CUANDO PASA EL MOUSE */
+}
+
+/* PESTAÑA ACTIVA — Página actual */
+.navbar a.active {
+  background: #ffa4b4;      /* ← COLOR DE LA PESTAÑA ACTIVA */
+  color: #fff;
+}
+
+
+/* ============================================
+   HERO — MOSCOW MULE
+============================================ */
+.hero {
+  width: 100%;
+  overflow: hidden;
+}
+
+.hero-image {
+  width: 100%;
+  display: block;
+}
+
+/* ======= CONCIERTOS ======= */
+
+.conciertos-section {
+  width: 100%;
+  padding: 100px 0 20px;
+  background: url("textura1.png") center/cover repeat;
+  text-align: center;
+}
+
+/* título como imagen */
+.titulo-conciertos-wrap {
+  margin-bottom: 20px;
+}
+
+.titulo-conciertos-img {
+  width: 500px;
+}
+
+/* contenedor principal */
+.conciertos-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+}
+
+/* palmeras */
+.concierto-palmera {
+  height: 900px;
+  transform: translateY(-180px)
+}
+
+.palmera-left { margin-right: 10px; }
+.palmera-right { margin-left: 10px; }
+
+/* galería de 3 imágenes */
+.conciertos-gallery {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 250px;
+  margin-top: -550px;
+}
+
+.concierto-card {
+  width: 230px;
+  height: 270px;
+  transition: transform 0.25s ease;
+}
+
+.concierto-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* centro más grande */
+.pos-center {
+  transform: scale(2);
+}
+
+.pos-left,
+.pos-right {
+  transform: scale(1.5);
+  opacity: 0.9;
+}
+
+/* flechas */
+.conciertos-arrows {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+}
+
+.conciertos-arrow {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  margin-top: -800px;
+}
+
+.conciertos-arrow img {
+  width: 40px;
+  transition: 1s;
+}
+
+.conciertos-arrow img:hover {
+  transform: scale(0.2);
+}
+
+/* ==========================================
+   FLORES ABAJO IZQUIERDA Y DERECHA
+========================================== */
+
+.flores-izquierda,
+.flores-derecha {
+  position: absolute;
+  bottom: -1000;       /* se apoyan en la parte baja de la sección */
+  width: 200px;     /* tamaño de las flores */
+  pointer-events: none;
+  opacity: 0.95;
+}
+
+/* izquierda */
+.flores-izquierda {
+  left: 200px;      /* distancia del borde izquierdo */
+}
+
+/* derecha */
+.flores-derecha {
+  right: 200px;     /* distancia del borde derecho */
+}
+
+
+/* ============================================
+   MERCH
+============================================ */
+
+.merch-section {
+  width: 100%;
+  padding: 60px 0 100px;
+  background:
+    url("textura1.png") center/cover repeat;
+}
+
+/* Título como imagen */
+.merch-title-wrap {
+  display: flex;
+  justify-content: center;
+  margin-top: -200px;
+}
+
+.merch-title-img {
+  width: 450px;
+  display: block;
+}
+
+/* Contenido central */
+.merch-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 100px;
+}
+
+/* Tarjetas de producto */
+.merch-card {
+  width: 400px;
+  height: 480px;
+  overflow: hidden;
+  border-radius: 18px;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
+  margin-top: -300px;
+}
+
+.merch-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Corazón */
+.merch-heart-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 90px;
+}
+
+.merch-floor-img {
+  width: 100%;
+}
+
+.merch-heart-wrap {
+  position: relative;
+  z-index: 2; /* Corazón encima del piso */
+}
+
+.merch-heart-img {
+  width: 600px;
+}
+
+/* Flechas */
+.merch-arrow-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.merch-arrow-btn img {
+  width: 50px;
+  transition: transform 0.2s;
+}
+
+.merch-arrow-btn img:hover {
+  transform: scale(1.15);
+}
+
+/* BOTÓN MÁS ENCIMA DEL PISO */
+.merch-more-wrap {
+  position: relative;
+  z-index: 3;        /* ← El botón está ENCIMA del piso y del corazón */
+  margin-top: -200px; /* ← AJUSTA para posicionarlo encima */
+  display: flex;
+  justify-content: center;
+}
+
+.merch-more-img {
+  width: 250px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+/* responsive */
+@media (max-width: 768px) {
+  .merch-center {
+    flex-wrap: wrap;
+  }
+
+  .merch-card {
+    width: 150px;
+    height: 165px;
+  }
+
+  .merch-heart-img {
+    width: 180px;
+  }
+}
+
+/* ================= PISO (DEBE IR DESPUÉS) ================= */
+.merch-floor {
+  position: static;
+  bottom: 5500px;
+  left: 50%;
+  transform: translateX(45%) scale(2); /* agrandar */
+  width: 300%;
+  max-width: 1000px; /* tamaño del piso */
+  z-index: 1;         /* Detrás del corazón */
+  pointer-events: none;
+}
+
+/* ============================================
+   ÚNETE
+============================================ */
+.unete {
+  position: relative;
+  padding-bottom: 180px;
+}
+
+/* fondo sol */
+.unete-sol {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.unete-sol img {
+  width: 100%;
+  max-width: 900px;
+  display: block;
+  margin: auto;
+}
+
+/* cuadro del formulario */
+.unete-formulario {
+  width: 380px;
+  background: rgba(255, 255, 255, 0.92);
+  padding: 25px;
+  border-radius: 20px;
+  position: absolute;
+  left: 50%;
+  top: 52%;
+  transform: translateX(-50%);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.2);
+}
+
+.campo-unete {
+  margin-bottom: 14px;
+}
+
+.label-img {
+  width: 130px;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.campo-unete input {
+  width: 100%;
+  padding: 10px 14px;
+  border: none;
+  background: #333;
+  color: #fff;
+  border-radius: 20px;
+}
+
+/* botón enviar */
+.unete-enviar button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.unete-enviar img {
+  width: 130px;
+  transition: 0.2s;
+}
+
+.unete-enviar img:hover {
+  transform: scale(1.05);
+}
+
+/* ================= ÚNETE ================= */
+
+.unete-section {
+  position: relative;
+  padding: 50px 0 80px;
+  background: url("textura1.png") center/cover repeat;
+  overflow: hidden;
+}
+
+/* Título como imagen */
+.unete-title-wrap {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.unete-title-img {
+  width: 1000px;     /* ajusta según tu imagen */
+  display: block;
+}
+
+/* Sol como imagen */
+.unete-sun-wrap {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.unete-sun-img {
+  width: 100%;
+  max-width: 2000px;  /* tamaño del sol */
+  display: block;
+}
+
+/* Formulario encima del sol */
+.unete-form-wrap {
+  position: absolute;
+  left: 50%;
+  top: 70%;                 /* sube/baja el bloque de inputs */
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 420px;
+}
+
+.unete-form {
+  background: transparent;  /* sin fondo, solo inputs flotando */
+}
+
+.unete-field {
+  margin-bottom: 10px;
+}
+
+.unete-field label {
+  display: block;
+  font-size: 12px;
+  font-weight: bold;
+  color: #ffffff;
+  margin-left: 18px;
+  margin-bottom: 4px;
+  text-shadow: 0 0 4px #000;
+}
+
+.unete-field input {
+  width: 100%;
+  border: none;
+  border-radius: 999px;
+  padding: 10px 16px;
+  background: #2e2a29;
+  color: #ffffff;
+  font-size: 13px;
+}
+

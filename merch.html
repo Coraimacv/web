@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Bad Bunny - Merch</title>
+  <link rel="stylesheet" href="merch.css">
+  <script src="merch.js"></script>
+
+</head>
+
+<body class="merch-body">
+
+  <!-- NAVBAR -->
+  <header class="main-header">
+    <nav class="navbar">
+      <ul>
+        <li><a href="index.html">INICIO</a></li>
+        <li><a href="biografia.html">BIOGRAFÍA</a></li>
+        <li><a href="merch.html" class="active">MERCH</a></li>
+        <li><a href="discografia.html">DISCOGRAFÍA</a></li>
+      </ul>
+    </nav>
+  </header>
+
+    <!-- Barra de búsqueda a la DERECHA -->
+    <div class="search-box">
+      <input type="text" placeholder="Buscar...">
+      <button>🔍</button>
+    </div>
+  </nav>
+
+<!-- 🛒 Carrito flotante abajo a la derecha -->
+<a href="carrito.html" class="cart-floating">
+  🛒 <span id="cartCount">0</span>
+</a>
+
+
+
+  <!-- =================== HERO DE MERCH =================== -->
+  <main class="merch-main">
+
+    <section class="merch-hero">
+
+      <!-- PALMERAS -->
+      <img src="palmeraizquierda.png" class="palmera-left">
+      <div class="merch-hero-center">
+
+        <!-- TÍTULO -->
+        <img src="merch.png" class="merch-title-img">
+       <img src="palmeraderecha.png" class="palmera-right">
+
+        <!-- PRODUCTO PRINCIPAL -->
+        <img src="merch1.png" class="merch-cd-img">
+        <h2 class="merch-name">Bad Bunny - Un Verano Sin Ti CD</h2>
+        <p class="merch-price">s/900.00</p>
+    
+    </section>
+
+
+<!-- ================ GRID DE PRODUCTOS ================ -->
+<section class="merch-grid">
+
+  <article class="merch-item" onclick="addToCart('New era x Bad Bunny', 100)">
+    <img src="merch2.png">
+    <h3>New era x Bad Bunny</h3>
+    <p class="merch-price">s/100.00</p>
+  </article>
+
+  <article class="merch-item" onclick="addToCart('Adidas X Bad Bunny', 400)">
+    <img src="merch3.png">
+    <h3>Adidas X Bad Bunny</h3>
+    <p class="merch-price">s/400.00</p>
+  </article>
+
+  <article class="merch-item" onclick="addToCart('Sudadera Un Verano Sin Ti', 100)">
+    <img src="merch4.png">
+    <h3>Sudadera Bad Bunny<br>Un Verano Sin Ti</h3>
+    <p class="merch-price">s/100.00</p>
+  </article>
+
+  <article class="merch-item" onclick="addToCart('Polo Boxy Un Verano Sin Ti', 100)">
+    <img src="merch5.png">
+    <h3>Polo boxy Bad Bunny<br>Un Verano Sin Ti</h3>
+    <p class="merch-price">s/100.00</p>
+  </article>
+
+  <article class="merch-item" onclick="addToCart('Adidas X Bad Bunny', 400)">
+    <img src="merch6.png">
+    <h3>Adidas X Bad Bunny</h3>
+    <p class="merch-price">s/400.00</p>
+  </article>
+
+  <article class="merch-item" onclick="addToCart('Response CL White Adidas x Bad Bunny', 800)">
+    <img src="merch7.png">
+    <h3>Response CL White de<br>adidas x Bad Bunny</h3>
+    <p class="merch-price">s/800.00</p>
+  </article>
+
+  <article class="merch-item" onclick="addToCart('Xishao Plush Un Verano Sin Ti', 156)">
+    <img src="merch8.png">
+    <h3>Xishao Un Verano<br>Sin Ti Plush</h3>
+    <p class="merch-price">s/156.00</p>
+  </article>
+
+  <article class="merch-item" onclick="addToCart('Amigurumi Bad Bunny', 115)">
+    <img src="merch9.png">
+    <h3>Amigurumi Bad Bunny</h3>
+    <p class="merch-price">s/115.00</p>
+  </article>
+
+</section>
+
+
+    <!-- ========== PISO + CORAZÓN (IMÁGENES SEPARADAS) ========== -->
+    <section class="merch-floor-section">
+
+      <img src="piso.png" class="merch-floor-img" alt="Piso">
+      <img src="corazon2.png" class="merch-floor-heart" alt="Corazón">
+
+    </section>
+
+  </main>
+
+
+<!-- Conectar con JavaScript -->
+<script src="merch.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+ <meta charset="UTF-8">
+ <title>Carrito</title>
+ <link rel="stylesheet" href="index.css">
+ <link rel="stylesheet" href="merch.css">
+</head>
+<body>
+
+<h1 style="text-align:center; margin-top:40px;">Carrito de compras</h1>
+<div id="cartItems" style="padding:40px; font-size:20px;"></div>
+
+<script>
+// Mostrar productos del carrito
+let cart = JSON.parse(localStorage.getItem("cartProducts") || "[]");
+let container = document.getElementById("cartItems");
+
+if (cart.length === 0) {
+  container.innerHTML = "<p>No hay productos en el carrito</p>";
+} else {
+  cart.forEach(item => {
+    container.innerHTML += `
+      <p>🛍 ${item.name} — s/${item.price}.00</p>
+    `;
+  });
+}
+</script>
+
+</body>
+</html>
